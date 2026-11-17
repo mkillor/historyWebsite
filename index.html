@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World History | Mr. Davis's Class</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: #f8f5ee; /* Warm parchment background */
+      color: #2c2825;
+      line-height: 1.6;
+    }
+
+    /* Typography */
+    h1, h2, h3, nav a, .btn {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: #1e2d3b; /* Classic navy */
+      color: #ffffff;
+      padding: 1.25rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid #b58938; /* Antique gold accent */
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #e6b85c;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(rgba(30, 45, 59, 0.85), rgba(30, 45, 59, 0.85)),
+                  url('https://unsplash.com') center/cover;
+      color: #ffffff;
+      text-align: center;
+      padding: 5rem 1.5rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      font-size: 1.15rem;
+      color: #e2e8f0;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #b58938;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #967029;
+    }
+
+    /* Main Content Container */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    section h2 {
+      color: #1e2d3b;
+      border-bottom: 2px solid #b58938;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+    }
+
+    /* Card Grid for Units */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #dcd6c8;
+      border-top: 4px solid #1e2d3b;
+      border-radius: 4px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      color: #1e2d3b;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .card .era {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: #8c6520;
+      font-weight: bold;
+      margin-bottom: 0.75rem;
+      font-family: sans-serif;
+    }
+
+    /* Schedule Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    th, td {
+      padding: 0.9rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #dcd6c8;
+    }
+
+    th {
+      background-color: #1e2d3b;
+      color: #ffffff;
+      font-family: sans-serif;
+    }
+
+    tr:hover {
+      background-color: #f3efe6;
+    }
+
+    /* Primary Source Links */
+    .resource-list {
+      list-style: none;
+      background: #ffffff;
+      padding: 1.5rem;
+      border: 1px solid #dcd6c8;
+      border-radius: 4px;
+    }
+
+    .resource-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed #dcd6c8;
+    }
+
+    .resource-list li:last-child {
+      border-bottom: none;
+    }
+
+    .resource-list a {
+      color: #1e2d3b;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .resource-list a:hover {
+      color: #b58938;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1e2d3b;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-family: sans-serif;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .hero h2 {
+        font-size: 1.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <h1>HIST 101: World Civilizations</h1>
+    <nav>
+      <ul>
+        <li><a href="#units">Course Units</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#archives">Primary Sources</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h2>Uncovering the Past, Understanding the Present</h2>
+    <p>Welcome to our digital classroom hub. Find weekly reading assignments, interactive historical timelines, and primary source documents here.</p>
+    <a href="#schedule" class="btn">View This Week's Schedule</a>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Course Units Section -->
+    <section id="units">
+      <h2>Course Units</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="era">3500 BCE – 500 CE</span>
+          <h3>Unit 1: Ancient Empires</h3>
+          <p>Explore the rise of early river valley civilizations, classical Greece, the Roman Republic, and the Han Dynasty.</p>
+        </div>
+        <div class="card">
+          <span class="era">500 CE – 1500 CE</span>
+          <h3>Unit 2: Global Exchange</h3>
+          <p>Examine the Silk Road trade networks, the Islamic Golden Age, Medieval Europe, and the Mongol Empire.</p>
+        </div>
+        <div class="card">
+          <span class="era">1500 CE – 1900 CE</span>
+          <h3>Unit 3: Age of Revolutions</h3>
+          <p>Analyze the Scientific Revolution, Enlightenment ideals, political upheavals, and industrialization.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly Schedule Section -->
+    <section id="schedule">
+      <h2>Weekly Schedule</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Topic</th>
+            <th>Reading / Assignment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>The Fall of the Western Roman Empire</td>
+            <td>Read Chapter 4, Sections 1–2</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>Primary Source Workshop: Analyzing Edicts</td>
+            <td>Complete Document Analysis Worksheet</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>Byzantine Continuity & Justinian's Code</td>
+            <td>Unit 1 Quiz & Discussion Post</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Primary Source Vault -->
+    <section id="archives">
+      <h2>Primary Source Vault</h2>
+      <ul class="resource-list">
+        <li><a href="https://docsteach.org" target="_blank">National Archives DocsTeach</a> — Interactive primary source documents and historical activities.</li>
+        <li><a href="https://loc.gov" target="_blank">Library of Congress Classroom Materials</a> — Photographs, maps, and historical manuscripts.</li>
+        <li><a href="https://fordham.edu" target="_blank">Internet History Sourcebooks Project</a> — Full-text ancient, medieval, and modern historical texts.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 History Department | Room 204 | Contact: historyclass@example.edu</p>
+  </footer>
+
+</body>
+</html>
